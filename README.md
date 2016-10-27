@@ -7,11 +7,11 @@ For more information see [olipo186/Git-Auto-Deploy](https://github.com/olipo186/
 
 * Pull this image
 
-`docker pull legerete\git-autodeploy`
+`docker pull legerete/git-autodeploy`
 
 * Run container
 
-`docker run -v ~/git-auto-deploy.conf.json:/etc/git-auto-deploy.conf.json legerete\git-autodeploy`
+`docker run -v ~/git-auto-deploy.conf.json:/etc/git-auto-deploy.conf.json legerete/git-autodeploy`
 
 ### Provide ssh_key for pull
 
