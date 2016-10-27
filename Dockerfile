@@ -3,9 +3,10 @@ MAINTAINER Petr Besir Horacek <petr.horacek@legerete.cz>
 
 RUN apt-get update && \
 	apt-get install -y \
+	software-properties-common \
 	git \
 	make \
-	software-properties-common
+	python-pkg-resources
 
 RUN add-apt-repository ppa:olipo186/git-auto-deploy
 
