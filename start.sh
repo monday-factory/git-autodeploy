@@ -14,8 +14,5 @@ chown -R git-auto-deploy:git-auto-deploy /etc/git-auto-deploy
 service git-auto-deploy start --port 8080 --daemon-mode false
 service git-auto-deploy status
 
-cat /var/log/git-auto-deploy.log
-echo "" > /var/log/git-auto-deploy.log
-
 # keep alive the container
-tail -F -n0 /dev/null
+tail -F /var/log/git-auto-deploy.log
