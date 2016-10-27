@@ -11,7 +11,7 @@ cp /var/ssh-deploy-keys/* /etc/git-auto-deploy/.ssh/
 chmod 600 /etc/git-auto-deploy/.ssh/*
 chown -R git-auto-deploy:git-auto-deploy /etc/git-auto-deploy
 
-service git-auto-deploy start --port 8080
+service git-auto-deploy start --port 8080 --daemon-mode false
 service git-auto-deploy status
 
 cat /var/log/git-auto-deploy.log
