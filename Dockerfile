@@ -14,12 +14,16 @@ RUN apt-get update
 
 RUN apt-get install  -y git-auto-deploy
 
+RUN mkdir /var/ssh-deploy-keys
+
 #Start
 ADD start.sh ./start.sh
 RUN chmod +x ./start.sh
 
 #Set port
 EXPOSE 8080
+
+VOLUME ["/var/ssh-deploy-keys"]
 
 #Start it
 ENTRYPOINT ["/start.sh"]
