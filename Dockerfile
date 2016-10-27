@@ -6,6 +6,8 @@ RUN apt-get update && \
 	software-properties-common \
 	git \
 	make \
+	sudo \
+	curl \
 	python-pkg-resources
 
 RUN add-apt-repository ppa:olipo186/git-auto-deploy
