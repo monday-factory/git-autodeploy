@@ -8,7 +8,7 @@ RUN apt-get update && \
 	make \
 	sudo \
 	curl \
-	docker \
+	docker.io \
 	python-pkg-resources
 
 RUN add-apt-repository ppa:olipo186/git-auto-deploy
