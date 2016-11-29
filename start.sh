@@ -11,7 +11,7 @@ if ($SSH_KEY_CHECKING_OFF); then
 	echo "StrictHostKeyChecking no" > /etc/git-auto-deploy/.ssh/config
 fi
 
-ssh -o StrictHostKeyChecking=no git@gitlab.legerete.cz
+ssh -o StrictHostKeyChecking=no git@$SSH_KEY_CHECKING_OFF
 
 cp /var/ssh-deploy-keys/* /etc/git-auto-deploy/.ssh/
 chmod 755 /etc/git-auto-deploy/.ssh
@@ -19,7 +19,7 @@ chmod 600 /etc/git-auto-deploy/.ssh/*
 chown -R git-auto-deploy:git-auto-deploy /etc/git-auto-deploy
 
 echo "" > /etc/git-auto-deploy/.ssh/known_hosts
-ssh-keyscan -t rsa gitlab.legerete.cz  >> /etc/git-auto-deploy/.ssh/known_hosts
+ssh-keyscan -t rsa $SSH_KEY_CHECKING_OFF  >> /etc/git-auto-deploy/.ssh/known_hosts
 chmod 644 /etc/git-auto-deploy/.ssh/known_hosts
 
 service git-auto-deploy start --port 8080
