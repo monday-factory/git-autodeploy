@@ -8,7 +8,7 @@
 #########################################################################
 
 if ($SSH_KEY_CHECKING_OFF); then
-	ssh -o StrictHostKeyChecking=no ${SSH_KEY_CHECKING_OFF}
+	echo "StrictHostKeyChecking no" > /etc/git-auto-deploy/.ssh/config
 fi
 
 ssh -o StrictHostKeyChecking=no git@gitlab.legerete.cz
@@ -18,6 +18,7 @@ chmod 755 /etc/git-auto-deploy/.ssh
 chmod 600 /etc/git-auto-deploy/.ssh/*
 chown -R git-auto-deploy:git-auto-deploy /etc/git-auto-deploy
 
+echo "" > /etc/git-auto-deploy/.ssh/known_hosts
 ssh-keyscan -t rsa gitlab.legerete.cz  >> /etc/git-auto-deploy/.ssh/known_hosts
 chmod 644 /etc/git-auto-deploy/.ssh/known_hosts
 
