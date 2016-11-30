@@ -11,13 +11,17 @@ RUN apt-get update && \
 	docker.io \
 	python-pkg-resources
 
+RUN git config --global user.email "git-auto-deploy@example.com"
+RUN git config --global user.name "Git Auto-Deploy"
+
 RUN add-apt-repository ppa:olipo186/git-auto-deploy
 
 RUN apt-get update
 
-RUN apt-get install  -y git-auto-deploy
+RUN apt-get install -y git-auto-deploy
 
 RUN mkdir /var/ssh-deploy-keys
+
 
 #Start
 ADD start.sh ./start.sh
